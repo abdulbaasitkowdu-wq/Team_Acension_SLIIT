@@ -1,0 +1,41 @@
+# Local input data and generated files
+/Phase1_Dataset/dataset/
+/processed/
+/artifacts/
+data/
+dataset_out/
+figures/
+*.parquet
+*.feather
+*.arrow
+*.csv
+*.tsv
+!/reports/feature_audit.csv
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+
+# Virtual environments, caches, and audit workspaces
+.venv/
+.venv-*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.final_audit*/
+.audit*/
+*.tmp
+
+# Local secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+credentials.json
+secrets.json
+secrets.yaml
+secrets.yml

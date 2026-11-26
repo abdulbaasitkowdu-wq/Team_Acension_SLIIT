@@ -1,0 +1,12 @@
+jupyterlab
+nbconvert
+numpy
+pandas
+pyarrow
+PyYAML
+matplotlib
+seaborn
+scipy
+scikit-learn
+joblib
+pytest

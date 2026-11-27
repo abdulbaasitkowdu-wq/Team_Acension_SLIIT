@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '@fontsource-variable/inter';
+
+/*
+ * PHANTOM is light-only. Bind shadcn's `dark:` utilities to a `.dark` class so an
+ * OS dark-mode preference does not partially restyle the interface.
+ */
+@custom-variant dark (&:is(.dark *));
+
+/* PHANTOM design tokens. Documented in docs/UI_DESIGN_SYSTEM.md. */
+:root {
+  --sidebar: #142b45;
+  --sidebar-foreground: #ffffff;
+  --sidebar-muted: #b6c4d6;
+  --sidebar-hover: #1d3a5b;
+  --sidebar-active: #254a72;
+  --sidebar-border: #25405f;
+
+  --background: #f5f7fb;
+  --card: #ffffff;
+  --popover: #ffffff;
+  --foreground: #0f172a;
+  --card-foreground: #0f172a;
+  --popover-foreground: #0f172a;
+
+  --primary: #3478b7;
+  --primary-foreground: #ffffff;
+  --primary-strong: #245a8c;
+
+  --secondary: #eef2f8;
+  --secondary-foreground: #0f172a;
+  --muted: #eef2f8;
+  /* The specified secondary text is #64748B; darkened so small text passes WCAG AA on tinted surfaces. */
+  --muted-foreground: #5b6b82;
+  --subtle-foreground: #475569;
+  --accent: #eaf1f8;
+  --accent-foreground: #0f172a;
+
+  --ai: #7756c5;
+  --ai-strong: #5b3fa3;
+  --success: #26966f;
+  --success-strong: #17664b;
+  --warning: #d97706;
+  --warning-strong: #92500a;
+  --destructive: #dc2626;
+  --destructive-strong: #b01e1e;
+
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #3478b7;
+
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-sidebar-hover: var(--sidebar-hover);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-sidebar-border: var(--sidebar-border);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-strong: var(--primary-strong);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ai: var(--ai);
+  --color-ai-strong: var(--ai-strong);
+  --color-success: var(--success);
+  --color-success-strong: var(--success-strong);
+  --color-warning: var(--warning);
+  --color-warning-strong: var(--warning-strong);
+  --color-destructive: var(--destructive);
+  --color-destructive-strong: var(--destructive-strong);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Cards use rounded-lg (8px) or rounded-xl (12px). */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply min-w-80 bg-background font-sans text-sm text-foreground antialiased;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
